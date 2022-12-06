@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <author>JC</author>
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="windowModality">
+   <enum>Qt::WindowModal</enum>
+  </property>
+  <property name="enabled">
+   <bool>true</bool>
+  </property>
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>300</width>
+    <height>510</height>
+   </rect>
+  </property>
+  <property name="sizePolicy">
+   <sizepolicy hsizetype="Preferred" vsizetype="Preferred">
+    <horstretch>0</horstretch>
+    <verstretch>0</verstretch>
+   </sizepolicy>
+  </property>
+  <property name="minimumSize">
+   <size>
+    <width>300</width>
+    <height>510</height>
+   </size>
+  </property>
+  <property name="maximumSize">
+   <size>
+    <width>300</width>
+    <height>510</height>
+   </size>
+  </property>
+  <property name="font">
+   <font>
+    <kerning>false</kerning>
+   </font>
+  </property>
+  <property name="windowTitle">
+   <string>示波器截图处理程序V5.0 @JC</string>
+  </property>
+  <property name="windowIcon">
+   <iconset resource="osc_value.qrc">
+    <normaloff>:/image/images/osc_value.ico</normaloff>:/image/images/osc_value.ico</iconset>
+  </property>
+  <property name="layoutDirection">
+   <enum>Qt::LeftToRight</enum>
+  </property>
+  <property name="autoFillBackground">
+   <bool>false</bool>
+  </property>
+  <property name="inputMethodHints">
+   <set>Qt::ImhNone</set>
+  </property>
+  <property name="documentMode">
+   <bool>false</bool>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <widget class="QGroupBox" name="groupBox_2">
+    <property name="geometry">
+     <rect>
+      <x>5</x>
+      <y>105</y>
+      <width>290</width>
+      <height>360</height>
+     </rect>
+    </property>
+    <property name="title">
+     <string>Active</string>
+    </property>
+    <widget class="QProgressBar" name="progressBar">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>285</y>
+       <width>270</width>
+       <height>20</height>
+      </rect>
+     </property>
+     <property name="value">
+      <number>0</number>
+     </property>
+     <property name="textVisible">
+      <bool>false</bool>
+     </property>
+     <property name="orientation">
+      <enum>Qt::Horizontal</enum>
+     </property>
+     <property name="format">
+      <string>%p%</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_generate">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>315</y>
+       <width>100</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>开始</string>
+     </property>
+    </widget>
+    <widget class="QPushButton" name="pushButton_exit">
+     <property name="geometry">
+      <rect>
+       <x>180</x>
+       <y>315</y>
+       <width>100</width>
+       <height>30</height>
+      </rect>
+     </property>
+     <property name="text">
+      <string>退出</string>
+     </property>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_3">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>20</y>
+       <width>270</width>
+       <height>55</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>图像路径</string>
+     </property>
+     <widget class="QLineEdit" name="lineEdit_path">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>200</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="placeholderText">
+       <string>请输入图像路径...</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_open">
+      <property name="geometry">
+       <rect>
+        <x>215</x>
+        <y>20</y>
+        <width>50</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>打开</string>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_4">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>140</y>
+       <width>270</width>
+       <height>125</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>Log</string>
+     </property>
+     <widget class="QTextEdit" name="textEdit_log">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>250</width>
+        <height>100</height>
+       </rect>
+      </property>
+      <property name="cursor" stdset="0">
+       <cursorShape>IBeamCursor</cursorShape>
+      </property>
+      <property name="mouseTracking">
+       <bool>true</bool>
+      </property>
+      <property name="tabletTracking">
+       <bool>false</bool>
+      </property>
+      <property name="inputMethodHints">
+       <set>Qt::ImhNone</set>
+      </property>
+      <property name="readOnly">
+       <bool>true</bool>
+      </property>
+      <property name="textInteractionFlags">
+       <set>Qt::TextSelectableByKeyboard|Qt::TextSelectableByMouse</set>
+      </property>
+     </widget>
+    </widget>
+    <widget class="QGroupBox" name="groupBox_5">
+     <property name="geometry">
+      <rect>
+       <x>10</x>
+       <y>80</y>
+       <width>270</width>
+       <height>55</height>
+      </rect>
+     </property>
+     <property name="title">
+      <string>标准路径</string>
+     </property>
+     <widget class="QLineEdit" name="lineEdit_path_2">
+      <property name="geometry">
+       <rect>
+        <x>10</x>
+        <y>20</y>
+        <width>200</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="placeholderText">
+       <string>请输入标准文件路径...</string>
+      </property>
+     </widget>
+     <widget class="QPushButton" name="pushButton_open_2">
+      <property name="geometry">
+       <rect>
+        <x>215</x>
+        <y>20</y>
+        <width>50</width>
+        <height>30</height>
+       </rect>
+      </property>
+      <property name="text">
+       <string>打开</string>
+      </property>
+     </widget>
+    </widget>
+   </widget>
+   <widget class="QLabel" name="label">
+    <property name="geometry">
+     <rect>
+      <x>0</x>
+      <y>0</y>
+      <width>300</width>
+      <height>100</height>
+     </rect>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+   </widget>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>300</width>
+     <height>18</height>
+    </rect>
+   </property>
+   <widget class="QMenu" name="menu">
+    <property name="title">
+     <string>文件</string>
+    </property>
+    <addaction name="actionopen"/>
+    <addaction name="actionexit"/>
+   </widget>
+   <widget class="QMenu" name="menuAbout">
+    <property name="title">
+     <string>帮助</string>
+    </property>
+    <addaction name="actionAbout_Help"/>
+    <addaction name="actionAbout_Python3"/>
+    <addaction name="actionAbout_QT5"/>
+   </widget>
+   <widget class="QMenu" name="menuEdit">
+    <property name="title">
+     <string>编辑</string>
+    </property>
+    <addaction name="actionEdit_Config"/>
+   </widget>
+   <addaction name="menu"/>
+   <addaction name="menuEdit"/>
+   <addaction name="menuAbout"/>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+  <action name="actionopen">
+   <property name="icon">
+    <iconset resource="osc_value.qrc">
+     <normaloff>:/image/images/document-open.png</normaloff>:/image/images/document-open.png</iconset>
+   </property>
+   <property name="text">
+    <string>打开</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+O</string>
+   </property>
+  </action>
+  <action name="actionexit">
+   <property name="icon">
+    <iconset resource="osc_value.qrc">
+     <normaloff>:/image/images/exit.png</normaloff>:/image/images/exit.png</iconset>
+   </property>
+   <property name="text">
+    <string>退出</string>
+   </property>
+   <property name="shortcut">
+    <string>Q</string>
+   </property>
+  </action>
+  <action name="actionAbout_Help">
+   <property name="icon">
+    <iconset resource="osc_value.qrc">
+     <normaloff>:/image/images/help.png</normaloff>:/image/images/help.png</iconset>
+   </property>
+   <property name="text">
+    <string>文档</string>
+   </property>
+   <property name="shortcut">
+    <string>H</string>
+   </property>
+  </action>
+  <action name="actionAbout_Python3">
+   <property name="icon">
+    <iconset resource="osc_value.qrc">
+     <normaloff>:/image/images/aboutpython.png</normaloff>:/image/images/aboutpython.png</iconset>
+   </property>
+   <property name="text">
+    <string>关于 Python3</string>
+   </property>
+  </action>
+  <action name="actionAbout_QT5">
+   <property name="icon">
+    <iconset resource="osc_value.qrc">
+     <normaloff>:/image/images/aboutQT.png</normaloff>:/image/images/aboutQT.png</iconset>
+   </property>
+   <property name="text">
+    <string>关于 QT5</string>
+   </property>
+  </action>
+  <action name="actionEdit_Config">
+   <property name="icon">
+    <iconset resource="osc_value.qrc">
+     <normaloff>:/image/images/editpaste.png</normaloff>:/image/images/editpaste.png</iconset>
+   </property>
+   <property name="text">
+    <string>配置</string>
+   </property>
+   <property name="shortcut">
+    <string>Ctrl+E</string>
+   </property>
+  </action>
+ </widget>
+ <includes>
+  <include location="local">JC Design</include>
+ </includes>
+ <resources>
+  <include location="osc_value.qrc"/>
+ </resources>
+ <connections/>
+</ui>
