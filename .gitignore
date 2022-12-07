@@ -1,0 +1,5 @@
+# IDE Settings
+.idea/
+
+# test
+test.py
