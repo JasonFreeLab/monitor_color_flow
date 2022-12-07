@@ -1,9 +1,19 @@
-from PyQt6 import QtWidgets
 import sys
-from PIL import Image
-app = QtWidgets.QApplication(sys.argv)
-test_window = QtWidgets.QWidget()
-test_window.resize(500, 500)
-test_window.setWindowTitle("测试窗口")
-test_window.show()
-sys.exit(app.exec())
+from PyQt6.QtWidgets import QApplication, QWidget
+
+
+def main():
+    app = QApplication(sys.argv)
+
+    w = QWidget()
+    w.resize(250, 200)
+    w.move(1500, 600)
+
+    w.setWindowTitle('Simple')
+    w.show()
+
+    sys.exit(app.exec())
+
+
+if __name__ == '__main__':
+    main()

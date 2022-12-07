@@ -260,7 +260,7 @@
      <x>0</x>
      <y>0</y>
      <width>300</width>
-     <height>18</height>
+     <height>22</height>
     </rect>
    </property>
    <widget class="QMenu" name="menu">
@@ -276,7 +276,7 @@
     </property>
     <addaction name="actionAbout_Help"/>
     <addaction name="actionAbout_Python3"/>
-    <addaction name="actionAbout_QT5"/>
+    <addaction name="actionAbout_QT6"/>
    </widget>
    <widget class="QMenu" name="menuEdit">
     <property name="title">
@@ -334,13 +334,13 @@
     <string>关于 Python3</string>
    </property>
   </action>
-  <action name="actionAbout_QT5">
+  <action name="actionAbout_QT6">
    <property name="icon">
     <iconset resource="osc_value.qrc">
      <normaloff>:/image/images/aboutQT.png</normaloff>:/image/images/aboutQT.png</iconset>
    </property>
    <property name="text">
-    <string>关于 QT5</string>
+    <string>关于 QT6</string>
    </property>
   </action>
   <action name="actionEdit_Config">

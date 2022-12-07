@@ -94,20 +94,20 @@ def actionabout_python3_click_success():  # 帮助python3页面
     myDialog = about_python_ui.Ui_Dialog()  # 创建对话框
     myDialog.setupUi(MainDialog)  # 将对话框依附于主窗体
     # 设置窗口的属性为ApplicationModal模态，用户只有关闭弹窗后，才能关闭主界面
-    MainDialog.setWindowModality(Qt.ApplicationModal)
+    MainDialog.setWindowModality(Qt.WindowModality.ApplicationModal)
     myDialog.pushButton.clicked.connect(MainDialog.close)  # 按钮点击事件信号链接关闭窗口
     MainDialog.show()  # 显示窗口
-    MainDialog.exec_()
+    MainDialog.exec()
 
 
 def actionabout_help_click_success():  # 帮助页面
     MainDialog = QDialog()  # 创建一个主窗体（必须要有一个主窗体）
     myDialog = help_ui.Ui_Dialog()  # 创建对话框
     myDialog.setupUi(MainDialog)  # 将对话框依附于主窗体
-    MainDialog.setWindowModality(Qt.ApplicationModal)
+    MainDialog.setWindowModality(Qt.WindowModality.ApplicationModal)
     myDialog.pushButton.clicked.connect(MainDialog.close)  # 按钮点击事件信号链接关闭窗口
     MainDialog.show()  # 显示窗口
-    MainDialog.exec_()
+    MainDialog.exec()
 
 
 def get_config_data():  # 获取保存的配置信息
@@ -207,7 +207,7 @@ def actionedit_config_click_success():  # 打开设置页面，初始化配置
     MainDialog = QDialog()  # 创建一个主窗体（必须要有一个主窗体）
     myDialog = edit_ui.Ui_Dialog()  # 创建对话框
     myDialog.setupUi(MainDialog)  # 将对话框依附于主窗体
-    MainDialog.setWindowModality(Qt.ApplicationModal)
+    MainDialog.setWindowModality(Qt.WindowModality.ApplicationModal)
 
     myDialog.buttonBox.accepted.connect(partial(accept, myDialog, MainDialog))  # OK
     myDialog.buttonBox.rejected.connect(MainDialog.close)  # Cancel
@@ -229,7 +229,7 @@ def actionedit_config_click_success():  # 打开设置页面，初始化配置
     myDialog.checkBox_4.setChecked(config_ini[4])  # 根据配置设置是否勾选
 
     MainDialog.show()  # 显示窗口
-    MainDialog.exec_()
+    MainDialog.exec()
 
 
 def ui_up_to_data(self, p, log):  # 更新主页面，弹出窗口
@@ -282,7 +282,7 @@ if __name__ == '__main__':
 
     ui.actionEdit_Config.triggered.connect(actionedit_config_click_success)  # 链接编辑配置选项
 
-    ui.actionAbout_QT5.triggered.connect(app.aboutQt)  # 链接关于选项
+    ui.actionAbout_QT6.triggered.connect(app.aboutQt)  # 链接关于选项
     ui.actionAbout_Python3.triggered.connect(actionabout_python3_click_success)  # 链接关于选项
     ui.actionAbout_Help.triggered.connect(actionabout_help_click_success)  # 链接关于选项
 
